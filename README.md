@@ -10,7 +10,7 @@ Currently works with the following scan types:
 - Trivy (-trivy.sarif)
 - Anchore (-anchore.sarif)
 
-Create a `scans` directory and place scan result files in that director, or rename `sample-scans` directory to `scans` to run with sample data. Files must end with the appropriate file name and extension shown in parenthesis in the list above in order to be processed by this script.
+Create a `scans` directory at project root and place scan result files in that directory, or rename `sample-scans` directory to `scans` to run with sample data. Files must end with the appropriate file name and extension shown in parenthesis in the list above in order to be processed by this script.
 
 Feel free to modify the script as you see fit to include any details from your scans into the final output file.
 
