@@ -10,16 +10,15 @@ Currently works with the following scan types:
 - Trivy (-trivy.sarif)
 - Anchore (-anchore.sarif)
 
-Place scan results in the `scans` directory. Files must end with the appropriate file name and extension shown in parenthesis in the list above in order to be processed by this script.
+Create a `scans` directory and place scan result files in that director, or rename `sample-scans` directory to `scans` to run with sample data. Files must end with the appropriate file name and extension shown in parenthesis in the list above in order to be processed by this script.
 
-Feel free to modify the script as you see fit to include any details from your scans into the final output file. Pull requests welcomed!
+Feel free to modify the script as you see fit to include any details from your scans into the final output file.
 
 ## To Run
 
 ### Prerequisites
 
-- Scan results placed in `scans` directory with appropriate file names (see Usage section above)
-  - Sample scans results are included for demonstration. Copy these results from the `sample-scans` directory into `scans` before running.
+- Scan results placed in a `scans` directory at project root with appropriate file names (see Usage section above)
 - Python 3 installed
 
 Once the scans are placed in the directory simply run using `python3 security-scan-jira-script.py`. The scipt will output a .json file to the project root.
