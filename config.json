@@ -1,0 +1,13 @@
+{
+    "outputFileName": "scans_for_jira.json",
+    "scanSeverity": [
+        "CRITICAL"
+    ],
+    "jiraProjectName": "MY JIRA PROJECT",
+    "jiraProjectKey": "MJP",
+    "jiraTicketLabels": [
+        "vulnerability"
+    ],
+    "jiraIssueType": "Task",
+    "scanPath": "./scans"
+}

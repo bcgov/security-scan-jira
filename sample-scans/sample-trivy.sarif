@@ -1,0 +1,157 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Trivy",
+          "informationUri": "https://github.com/aquasecurity/trivy",
+          "fullName": "Trivy Vulnerability Scanner",
+          "version": "0.15.0",
+          "rules": [
+                {
+                  "id": "CVE-2021-36159",
+                  "name": "OsPackageVulnerability",
+                  "shortDescription": {
+                    "text": "CVE-2021-36159"
+                  },
+                  "fullDescription": {
+                    "text": "."
+                  },
+                  "defaultConfiguration": {
+                    "level": "error"
+                  },
+                  "helpUri": "https://avd.aquasec.com/nvd/cve-2021-36159",
+                  "help": {
+                    "text": "Vulnerability CVE-2021-36159\nlibfetch before 2021-07-26, as used in apk-tools, xbps, and other products, mishandles numeric strings for the FTP and HTTP protocols. The FTP passive mode implementation allows an out-of-bounds read because strtol is used to parse the relevant numbers into address bytes. It does not check if the line ends prematurely. If it does, the for-loop condition checks for the '\\0' terminator one byte too late.\nSeverity: CRITICAL\nPackage: apk-tools\nFixed Version: 2.12.6-r0\nLink: [CVE-2021-36159](https://avd.aquasec.com/nvd/cve-2021-36159)",                    
+                    "markdown": "**Vulnerability CVE-2021-36159**\nlibfetch before 2021-07-26, as used in apk-tools, xbps, and other products, mishandles numeric strings for the FTP and HTTP protocols. The FTP passive mode implementation allows an out-of-bounds read because strtol is used to parse the relevant numbers into address bytes. It does not check if the line ends prematurely. If it does, the for-loop condition checks for the '\\0' terminator one byte too late.\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|apk-tools|2.12.6-r0|[CVE-2021-36159](https://avd.aquasec.com/nvd/cve-2021-36159)|\n"                    
+                  },
+                  "properties": {
+                    "tags": [
+                      "vulnerability",
+                      "CRITICAL"
+                    ],
+                    "precision": "very-high"
+                  }
+                },
+                {
+                  "id": "CVE-2021-42378",
+                  "name": "OsPackageVulnerability",
+                  "shortDescription": {
+                    "text": "CVE-2021-42378"
+                  },
+                  "fullDescription": {
+                    "text": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_i()."
+                  },
+                  "defaultConfiguration": {
+                    "level": "error"
+                  },
+                  "helpUri": "https://avd.aquasec.com/nvd/cve-2021-42378",
+                  "help": {
+                    "text": "Vulnerability CVE-2021-42378\nA use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_i function\nSeverity: HIGH\nPackage: busybox\nFixed Version: 1.32.1-r7\nLink: [CVE-2021-42378](https://avd.aquasec.com/nvd/cve-2021-42378)",                    
+                    "markdown": "**Vulnerability CVE-2021-42378**\nA use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_i function\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|busybox|1.32.1-r7|[CVE-2021-42378](https://avd.aquasec.com/nvd/cve-2021-42378)|\n"                    
+                  },
+                  "properties": {
+                    "tags": [
+                      "vulnerability",
+                      "HIGH"
+                    ],
+                    "precision": "very-high"
+                  }
+                },
+                {
+                  "id": "CVE-2021-42379",
+                  "name": "OsPackageVulnerability",
+                  "shortDescription": {
+                    "text": "CVE-2021-42379"
+                  },
+                  "fullDescription": {
+                    "text": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the next_input_file()."
+                  },
+                  "defaultConfiguration": {
+                    "level": "error"
+                  },
+                  "helpUri": "https://avd.aquasec.com/nvd/cve-2021-42379",
+                  "help": {
+                    "text": "Vulnerability CVE-2021-42379\nA use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the next_input_file function\nSeverity: HIGH\nPackage: busybox\nFixed Version: 1.32.1-r7\nLink: [CVE-2021-42379](https://avd.aquasec.com/nvd/cve-2021-42379)",                    
+                    "markdown": "**Vulnerability CVE-2021-42379**\nA use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the next_input_file function\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|busybox|1.32.1-r7|[CVE-2021-42379](https://avd.aquasec.com/nvd/cve-2021-42379)|\n"                    
+                  },
+                  "properties": {
+                    "tags": [
+                      "vulnerability",
+                      "HIGH"
+                    ],
+                    "precision": "very-high"
+                  }
+                }
+              ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CVE-2021-36159",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "Package: apk-tools\nInstalled Version: 2.12.5-r0\nVulnerability CVE-2021-36159\nSeverity: CRITICAL\nFixed Version: 2.12.6-r0\nLink: [CVE-2021-36159](https://avd.aquasec.com/nvd/cve-2021-36159)"
+          },
+          "locations": [{
+            "physicalLocation": {
+              "artifactLocation": {
+                "uri": "my-org/my-repo:trivy-scan",
+                "uriBaseId": "ROOTPATH"
+              },
+              "region" : {
+                "startLine": 1
+              }
+            }
+          }]
+        },
+        {
+          "ruleId": "CVE-2021-42378",
+          "ruleIndex": 1,
+          "level": "error",
+          "message": {
+            "text": "Package: busybox\nInstalled Version: 1.32.1-r6\nVulnerability CVE-2021-42378\nSeverity: HIGH\nFixed Version: 1.32.1-r7\nLink: [CVE-2021-42378](https://avd.aquasec.com/nvd/cve-2021-42378)"
+          },
+          "locations": [{
+            "physicalLocation": {
+              "artifactLocation": {
+                "uri": "my-org/my-repo:trivy-scan",
+                "uriBaseId": "ROOTPATH"
+              },
+              "region" : {
+                "startLine": 1
+              }
+            }
+          }]
+        },
+        {
+          "ruleId": "CVE-2021-42379",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Package: busybox\nInstalled Version: 1.32.1-r6\nVulnerability CVE-2021-42379\nSeverity: HIGH\nFixed Version: 1.32.1-r7\nLink: [CVE-2021-42379](https://avd.aquasec.com/nvd/cve-2021-42379)"
+          },
+          "locations": [{
+            "physicalLocation": {
+              "artifactLocation": {
+                "uri": "my-org/my-repo:trivy-scan",
+                "uriBaseId": "ROOTPATH"
+              },
+              "region" : {
+                "startLine": 1
+              }
+            }
+          }]
+        }],
+      "columnKind": "utf16CodeUnits",
+      "originalUriBaseIds": {
+        "ROOTPATH": {
+          "uri": "file:///"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+.DS_Store
+.vscode/
+scans/*
+scans_for_jira*.json
