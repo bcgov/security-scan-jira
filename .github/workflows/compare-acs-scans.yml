@@ -1,9 +1,9 @@
 name: Compare ACS Scans
 on:
-  # schedule:
-  #   - cron:  '00 11 * * SUN'
+  schedule:
+    - cron:  '00 11 * * SUN'
   push:
-    branches: [dev]
+    branches: [my-branch]
 
 jobs:
   build:
@@ -13,13 +13,13 @@ jobs:
       - name: "Download artifact"
         continue-on-error: true
         run: |
-          OTHER_REPO="bcgov/security-scan-jira"
+          REPO="bcgov/security-scan-jira"
           WF_NAME="compare-acs-scans.yml"
           ARTIFACT_NAME="last-acs-results"
-          RUN_ID=`gh run --repo ${OTHER_REPO} list --workflow ${WF_NAME} --json databaseId --jq .[1].databaseId`
+          RUN_ID=`gh run --repo ${REPO} list --workflow ${WF_NAME} --json databaseId --jq .[1].databaseId`
           mkdir last_acs_scans
-          echo "Downloading ${ARTIFACT_NAME} from ${OTHER_REPO} with run ID ${RUN_ID}"
-          gh run --repo ${OTHER_REPO} download ${RUN_ID} -n ${ARTIFACT_NAME} -D last_acs_scans
+          echo "Downloading ${ARTIFACT_NAME} from ${REPO} with run ID ${RUN_ID}"
+          gh run --repo ${REPO} download ${RUN_ID} -n ${ARTIFACT_NAME} -D last_acs_scans
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Set up Python 3.9
@@ -39,10 +39,10 @@ jobs:
           JIRA_API_KEY: ${{ secrets.JIRA_API_KEY }}
           ACS_API_KEY: ${{ secrets.ACS_API_KEY }}
           ACCEPTED_VULNERABILITIES: HIGH,CRITICAL
-          USE_TEST_DATA: true
-          JIRA_OPERATION: NONE
+          USE_TEST_DATA: false
+          JIRA_OPERATION: POST
           JIRA_PUT_ID: ABC-123
-          START_FRESH: false
+          START_FRESH: true
       - name: Upload Old Scan Results
         uses: actions/upload-artifact@v2
         with:
