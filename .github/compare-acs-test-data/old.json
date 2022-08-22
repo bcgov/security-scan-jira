@@ -1,0 +1,74 @@
+{
+  "alerts": [
+    {
+      "id": "0000",
+      "lifecycleStage": "DEPLOY",
+      "time": "2022-08-18T00:43:49.715687727Z",
+      "policy": {
+        "id": "0000-pol",
+        "name": "Images with no scans",
+        "severity": "HIGH_SEVERITY",
+        "description": "Alert on deployments with images that have not been scanned",
+        "categories": [
+          "Vulnerability Management"
+        ],
+        "developerInternalFields": null
+      },
+      "state": "ACTIVE",
+      "enforcementCount": 0,
+      "tags": [],
+      "enforcementAction": "UNSEolT_ENFORCEMENT",
+      "commonEntityInfo": {
+        "clusterName": "GOLDDR",
+        "namespace": "abc123-dev",
+        "clusterId": "golddr-clus-id",
+        "namespaceId": "golddr-ns-id",
+        "resourceType": "DEPLOYMENT"
+      },
+      "deployment": {
+        "id": "0000-dep",
+        "name": "my-0000-deploy",
+        "clusterName": "GOLDDR",
+        "namespace": "abc123-dev",
+        "clusterId": "golddr-clus-id",
+        "inactive": false,
+        "namespaceId": "golddr-ns-id"
+      }
+    },
+    {
+      "id": "1111",
+      "lifecycleStage": "RUNTIME",
+      "time": "2022-08-18T00:44:50.815687727Z",
+      "policy": {
+        "id": "1111",
+        "name": "Kubernetes Actions: Exec into Pod",
+        "severity": "HIGH_SEVERITY",
+        "description": "Alerts when Kubernetes API receives request to execute command in container",
+        "categories": [
+          "Vulnerability Management"
+        ],
+        "developerInternalFields": null
+      },
+      "state": "ACTIVE",
+      "enforcementCount": 0,
+      "tags": [],
+      "enforcementAction": "UNSEolT_ENFORCEMENT",
+      "commonEntityInfo": {
+        "clusterName": "SILVER",
+        "namespace": "bcd234-dev",
+        "clusterId": "sil-clus-id",
+        "namespaceId": "sil-ns-id",
+        "resourceType": "DEPLOYMENT"
+      },
+      "deployment": {
+        "id": "1111-dep-id",
+        "name": "my-1111-deploy",
+        "clusterName": "SILVER",
+        "namespace": "abc123-dev",
+        "clusterId": "sil-clus-id",
+        "inactive": false,
+        "namespaceId": "sil-ns-id"
+      }
+    }
+  ]
+}
