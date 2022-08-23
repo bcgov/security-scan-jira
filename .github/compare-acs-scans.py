@@ -12,7 +12,7 @@ USE_TEST_DATA = utils.strtobool(
 # Use POST, PUT, or NONE
 JIRA_OPERATION = os.environ.get('JIRA_OPERATION', 'POST').upper()
 # Required if using PUT:
-JIRA_PUT_ID = os.environ.get('JIRA_PUT_ID', 'APS-1247')
+JIRA_PUT_ID = os.environ.get('JIRA_PUT_ID', '')
 START_FRESH = utils.strtobool(os.environ.get('START_FRESH', False))
 
 LAST_SCAN_FILE = 'last_acs_results.json'

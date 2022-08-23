@@ -11,6 +11,7 @@ OLD_SCAN_PATH = Path('./old_scan_results.json')
 
 JIRA_EMAIL = os.environ.get('JIRA_EMAIL')
 JIRA_API_KEY = os.environ.get('JIRA_API_KEY')
+JIRA_PROJECT_KEY = os.environ.get('JIRA_PROJECT_KEY', '')
 JIRA_API_URL = "https://dpdd.atlassian.net/rest/api/2"
 JIRA_AUTH = HTTPBasicAuth(JIRA_EMAIL, JIRA_API_KEY)
 HEADERS = {
@@ -39,16 +40,12 @@ def post_request(ticket):
     payload = json.dumps({
         "fields": {
             "project": {
-                "key": "APS"
+                "key": JIRA_PROJECT_KEY
             },
             "summary": ticket['summary'],
             "description": ticket['description'],
             "issuetype": {
                 "name": "Story"
-            },
-            "customfield_10014": "APS-908",
-            "priority": {
-                "id": "10000"
             }
         }
     })
@@ -68,14 +65,10 @@ def put_request(ticket, ticket_id):
     payload = json.dumps({
         "fields": {
             "project": {
-                "key": "APS"
+                "key": JIRA_PROJECT_KEY
             },
             "summary": ticket['summary'],
-            "description": ticket['description'],
-            "customfield_10014": "APS-908",
-            "priority": {
-                "id": "10000"
-            }
+            "description": ticket['description']
         }
     })
 

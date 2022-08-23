@@ -38,6 +38,7 @@ jobs:
           JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
           JIRA_API_KEY: ${{ secrets.JIRA_API_KEY }}
           ACS_API_KEY: ${{ secrets.ACS_API_KEY }}
+          JIRA_PROJECT_KEY: UPDATEME
           ACCEPTED_VULNERABILITIES: HIGH,CRITICAL
           USE_TEST_DATA: false
           JIRA_OPERATION: POST
